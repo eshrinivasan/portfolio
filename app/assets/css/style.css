@@ -55,3 +55,99 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+.card .card-image img{
+  min-height: 303px;
+  height:300px;
+}
+
+/*Hover Opacity Change*/
+.card-image img {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.card-image:hover img {
+  opacity: .5;
+}
+
+/* Circle */
+.card-image {
+  position: relative;
+}
+.card-image::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,.2);
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.card-image:hover::before {
+  -webkit-animation: circle .75s;
+  animation: circle .75s;
+}
+@-webkit-keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+
+.fixed-action-btn {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+
+
+#overlay    {  
+  text-align:center;
+  opacity:0;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  display:none;
+
+}
+.card:hover .activator{
+}
+.card:hover #overlay {
+   opacity:1;
+   display:block;
+   position:absolute;
+   top:0;
+   right:0;
+}
+
+#plus       {  font-family:Helvetica;
+               font-weight:900;
+               color:rgba(0,0,0,.75);
+               font-size:26px;}
